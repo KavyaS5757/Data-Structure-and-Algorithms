@@ -199,6 +199,7 @@ int main()
 }
 */
 
+/*
 struct matrix   //implementaion of upper triangle in c by column wise mapping
 {
     int *A;
@@ -258,8 +259,9 @@ int main()
     display(m);
     return 0;
 }
+*/
 /*
-class LowerTri
+class LowerTri   //by row-wise mapping
 {
     private:
         int *A;
@@ -337,3 +339,167 @@ int main()
 }
 */
 
+/*
+class uppertri      //c++ program by row-wise mapping
+{
+    private:    //accessible to function and its friend function
+        int *A;
+        int n;
+    public:
+        uppertri()      //accessible in a restricted mode
+        {
+            n=2;
+            A=new int(2*(2+1)/2);
+        }
+        uppertri(int n)      //accessible in a restricted mode
+        {
+            this->n=n;
+            A=new int[n*(n+1)/2];
+        }
+        ~uppertri()
+        {
+            delete[]A;
+        }
+
+        void set(int i, int j,int x);
+        int get(int i,int j);
+        void display();
+        int getdimension(){return n;};
+};
+
+void uppertri::set(int i, int j,int x)
+{
+    if(i<=j)
+    A[(i*(i-1)/2) + (j-1)]=x;
+}
+
+int uppertri::get(int i,int j)
+{
+    if(i<=j)
+    return i*(i-1)/2 + (j-1);
+    else
+    return 0;
+}
+
+void uppertri::display()
+{
+    for(int i=1;i<=n;i++)
+    {
+        for(int j=1;j<=n;j++)
+        {
+            if(i<=j)
+            cout<<A[i*(i-1)/2 +(j-1)]<<" ";
+            else
+            cout<<"0 ";
+        }
+        cout<<endl;
+    }
+}
+
+int main()
+{
+    int d;
+    cout<<"Enter the dimension: ";
+    cin>>d;
+    
+    uppertri u(d);
+
+    int x;
+    cout<<"Enter all the elements: "<<endl;
+    for(int i=1;i<=d;i++)
+    {
+        for(int j=1;j<=d;j++)
+        {
+            cin>>x;
+            u.set(i,j,x);
+        }
+    }
+    u.display();
+    return 0;
+}
+*/
+ 
+class uppertri    //c++ program in column-wiae mapping
+{
+    private:
+        int *A;
+        int n;
+    public:
+        uppertri()
+        {
+            n=2;
+            A=new int[2*(2+1)/2];
+        }
+        uppertri(int n)
+        {
+            this->n=n;
+            A=new int[n*(n+1)/2];
+        }
+        ~uppertri()
+        {
+            delete[]A;
+        }
+        int getdimension()
+        {
+            return n;
+        }
+
+        void set(int i, int j, int x);
+        int get(int i, int j);
+        void display();
+};
+
+void uppertri::set(int i,int j,int x)
+{
+    if(i<=j)
+    A[j*(j-1)/2 +(i-1)]=x;
+}
+
+int uppertri::get(int i, int j)
+{
+    if(i<=j)
+    return j*(j-1)/2 + (i-1);
+    return 0;
+}
+
+void uppertri::display()
+{
+    for(int i=1;i<=n;i++)
+    {
+        for(int j=1;j<=n;j++)
+        {
+            if(i<=j)
+            cout<<A[j*(j-1)/2 +(i-1)]<<" ";
+            else
+            cout<<"0 ";
+        }
+        cout<<endl;
+    }
+}
+
+int main()
+{
+    int d;
+    cout<<"Enter the size of the elements: "<<endl;
+    cin>>d;
+
+    uppertri u(d);
+
+    int x;
+    cout<<"Enter all elements: "<<endl;
+    for(int i=1;i<=d;i++)
+    {
+        for(int j=1;j<=d;j++)
+        {
+            cin>>x;
+            u.set(i,j,x);
+        }
+    }
+    u.display();
+    return 0;
+}
+//references:-
+/*
+https://www.youtube.com/watch?v=uYXrJlz8rek
+DSA udemy course
+*/
