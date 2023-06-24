@@ -419,7 +419,7 @@ int main()
 }
 */
  
-class uppertri    //c++ program in column-wiae mapping
+class uppertri    //c++ program in column-wise mapping
 {
     private:
         int *A;
