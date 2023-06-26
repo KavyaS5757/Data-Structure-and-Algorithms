@@ -1,0 +1,94 @@
+Notes:  -- sparse matrix and polynomial representation
+    -> when we are declaring that, "struct matrix A[10];" -- this will become a static array means its storing values will be limited upto a specific limit
+    -> To make a variable or array become a dynamic one(able to store more elements)
+
+Call By Value:-
+->In call by value method of parameter passing, the values of actual parameters are copied to the function’s formal parameters.
+->There are two copies of parameters stored in different memory locations.
+->One is the original copy and the other is the function copy.
+->Any changes made inside functions are not reflected in the actual parameters of the caller.
+
+Call by Reference:-
+->In call by reference method of parameter passing, the address of the actual parameters is passed to the function as the formal parameters.
+->Both the actual and formal parameters refer to the exact locations.
+->Any changes made inside the function are reflected in the actual parameters of the caller.
+
+Constructor: 
+-> A constructor is a member function of a class that has the same name as the class name. 
+-> It helps to initialize the object of a class. 
+-> It can either accept the arguments or not. 
+-> It is used to allocate the memory to an object of the class. 
+-> It is called whenever an instance of the class is created. 
+-> It can be defined manually with arguments or without arguments. 
+-> There can be many constructors in a class. 
+-> It can be overloaded but it can not be inherited or virtual. 
+-> There is a concept of copy constructor which is used to initialize an object from another object. 
+
+Destructor: 
+-> Like a constructor, Destructor is also a member function of a class that has the same name as the class name preceded by a tilde(~) operator. 
+-> It helps to deallocate the memory of an object. 
+-> It is called while the object of the class is freed or deleted. 
+-> In a class, there is always a single destructor without any parameters so it can’t be overloaded. 
+-> It is always called in the reverse order of the constructor. 
+-> If a class is inherited by another class and both the classes have a destructor then the destructor of the child class is called first, followed by the destructor of the parent or base class
+
+
+In C++, the following are the general rules for operator overloading.
+
+1) Only built-in operators can be overloaded. New operators can not be created.
+2) Arity* of the operators cannot be changed.
+3) Precedence and associativity of the operators cannot be changed.
+4) Overloaded operators cannot have default arguments except the function call operator () which can have default arguments.
+5) Operators cannot be overloaded for built-in types only. At least one operand must be used defined type.
+6) Assignment (=), subscript ([]), function call (“()”), and member selection (->) operators must be defined as member functions
+7) Except the operators specified in point 6, all other operators can be either member functions or non-member functions.
+8 ) Some operators like (assignment)=, (address)& and comma (,) are by default overloaded.
+
+Arity* = arity is the number of arguments or operands taken by a function, operation, or relation. In mathematics, arity may also be called rank, but this word can have many other meanings.
+
+Friend Class:
+-> A friend class can access private and protected members of other classes in which it is declared as a friend.
+-> It is sometimes useful to allow a particular class to access private and protected members of other classes. 
+-> For example, a LinkedList class may be allowed to access private members of Node.
+for example:-
+// C++ Program to demonstrate the
+// functioning of a friend class
+#include <iostream>
+using namespace std;
+
+class GFG {
+private:
+	int private_variable;
+protected:
+	int protected_variable;
+public:
+	GFG()
+	{
+		private_variable = 10;
+		protected_variable = 99;
+	}
+
+	// friend class declaration
+	friend class F;
+};
+
+// Here, class F is declared as a friend inside class GFG. Therefore, F is a friend of class GFG. Class F can access the private members of class GFG.
+class F {
+public:
+	void display(GFG& t)
+	{
+		cout << "The value of Private Variable = "
+			<< t.private_variable << endl;
+		cout << "The value of Protected Variable = "
+			<< t.protected_variable;
+	}
+};
+
+// Driver code
+int main()
+{
+	GFG g;
+	F fri;
+	fri.display(g);
+	return 0;
+}
