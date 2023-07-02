@@ -22,7 +22,7 @@ int parse_int(char*);
  */
 
 
-
+/*
 int main()      //--c code
 {
     int i,j;
@@ -49,4 +49,55 @@ int main()      //--c code
     printf("%d",temp);
     return 0;
 }
+*/
+
+#include <bits/stdc++.h>       -- c++14 code
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+#include<vector>
+#include<iostream>
+
+using namespace std;
+
+
+string ltrim(const string &);
+string rtrim(const string &);
+vector<string> split(const string &);
+
+
+/* 
+    Here we are going to solve one of the hackerrank problem
+    This problem is about 2D arrays --hourgalss problem
+
+*/
+
+int main()
+{
+   int a[6][6],s;
+   int m=INT_MIN;
+   
+   for(int i=0;i<6;i++)
+   {
+       for(int j=0;j<6;j++)
+       {
+           cin>>a[i][j];
+       }
+   }
+   
+   for(int i=0;i<4;i++)
+   {
+       for(int j=0;j<4;j++)
+       {
+           s=a[i][j]+a[i][j+1]+a[i][j+2]+a[i+1][j+1]+a[i+2][j]+a[i+2][j+1]+a[i+2][j+2];
+           
+           if (s>m)
+           m=s;
+       }
+   }
+   cout<<m;
+   return 0;
+}
+
 
