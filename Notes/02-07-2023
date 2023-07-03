@@ -255,7 +255,6 @@ int main()
     memset(arr, 10, n*sizeof(arr[0]));
     printf("Array after memset()\n");
     printArray(arr, n);
-  
     return 0;
 }
 Note that the above code doesn’t set array values to 10 as memset works character by character and an integer contains more than one bytes (or characters).
