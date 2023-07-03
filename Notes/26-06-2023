@@ -32,7 +32,6 @@ Destructor:
 -> It is always called in the reverse order of the constructor. 
 -> If a class is inherited by another class and both the classes have a destructor then the destructor of the child class is called first, followed by the destructor of the parent or base class
 
-
 In C++, the following are the general rules for operator overloading.
 
 1) Only built-in operators can be overloaded. New operators can not be created.
