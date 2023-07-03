@@ -35,7 +35,6 @@ fputs(str, stdout)
 
 Difference between the print() and puts()
 Following are some differences between printf() and puts() functions in C:
-
 printf                                                                   puts
 ->allows us to print formatted strings using format specifiers.          ->puts do not support formatting.
 ->does not add new line characters automatically.                        ->puts automatically adds a new line character.
