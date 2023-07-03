@@ -1,5 +1,4 @@
 ofstream fout(getenv("OUPUT_PATH"));
-
 This line can be broken into two pieces.
 
 auto res = getenv("OUTPUT_PATH");
