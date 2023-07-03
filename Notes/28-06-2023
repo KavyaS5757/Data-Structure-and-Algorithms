@@ -21,7 +21,6 @@ Types of Self Referential Structures
     These structures can have only one self-pointer as their member.
     Example with code:-
 #include <stdio.h>      --c++
-
 struct node {
 	int data1;
 	char data2;
