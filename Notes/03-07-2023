@@ -1,0 +1,91 @@
+In C, both puts() and printf() functions are used for printing a string on the console and are defined in <stdio.h> header file. 
+In this article, we will discuss the differences in the usage and behavior of both functions.
+
+puts() Function
+The puts() function is used to write a string to the console and it automatically adds a new line character ‘\n’ at the end.
+
+Syntax
+puts("str");
+
+Parameters
+->str: It takes a null-terminated string as the argument.
+
+Return Value
+->It returns a non-negative value if the output is successful, or End-of-File if an error occurs.
+printf() Function
+The printf() function is also used to print data on the console, but it can also be used to print the formatted data to the console based on a specified format string.
+
+Syntax
+printf("format_string", Arguments);
+
+Parameters
+->format_string: It can be a simple string or a string containing format specifiers.
+->Arguments: It is the variable names whose value is to be printed.
+
+Return Value
+->It returns the number of characters successfully written to the console and a negative value if an error occurs.
+
+? Which of the following two should be preferred?
+puts() can be preferred for printing a string because it is generally less costly(implementation of puts() is generally simpler than printf()), and if the string has formatting characters like ‘%s‘, then printf() would give unexpected results. 
+Also, if str is a user input string, then the use of printf() might cause security issues.
+Also, note that puts() move the cursor to the next line.
+If you do not want the cursor to be moved to the next line, then you can use the following variation of puts().
+
+fputs(str, stdout)
+
+Difference between the print() and puts()
+Following are some differences between printf() and puts() functions in C:
+
+printf                                                                   puts
+->allows us to print formatted strings using format specifiers.          ->puts do not support formatting.
+->does not add new line characters automatically.                        ->puts automatically adds a new line character.
+->It returns the number of characters successfully written to the        ->It returns a non-negative value on success and EOF (end-of-file) on failure.
+console.
+->printf can handle multiple strings at one time which helps in          ->puts can print a single string at one time.
+concatenating the strings in the output.
+->printf can print data of different data types.                         ->puts can print only strings.
+
+Example 1
+The below C program demonstrates the use of puts.
+
+// C program to show the use of puts
+#include <stdio.h>
+int main()
+{
+    puts("Geek%sforGeek%s");
+    getchar();
+    return 0;
+}
+Output-
+Geek%sforGeek%s
+
+Example 2
+The below C program demonstrated the use of fputs.
+
+// C program to show the use of fputs
+#include <stdio.h>
+int main()
+{
+    fputs("Geeksfor", stdout);
+    fputs("Geeks", stdout);
+    return 0;
+}
+Output
+GeeksforGeeks
+
+Example 3
+The below C program demonstrates the unexpected behavior when %s is used in printf.
+
+// C program to show the unexpected behaviour
+// when %s is used in printf
+#include <stdio.h>
+int main()
+{
+    // % is intentionally put here to show the unexpected
+    // behaviour when %s is used in printf
+    printf("Geek%sforGeek%s");
+    getchar();
+    return 0;
+}
+Output-
+Geek0>z��forGeek;>z��
