@@ -1,0 +1,146 @@
+vector::push_back() and vector::pop_back() in C++ STL
+
+Vectors are same as dynamic arrays with the ability to resize itself automatically when an element is inserted or deleted, with their storage being handled automatically by the container.
+vector::push_back()
+push_back() function is used to push elements into a vector from the back. 
+The new value is inserted into the vector at the end, after the current last element and the container size is increased by 1. 
+
+Syntax: 
+vectorname.push_back(value)
+Parameters :
+The value to be added in the back is 
+passed as the parameter
+Result :
+Adds the value mentioned as the parameter 
+to the back of the vector named as vectorname
+Examples:  
+
+
+Input: myvector = {1, 2, 3, 4, 5};
+       myvector.push_back(6);
+Output:1, 2, 3, 4, 5, 6
+
+Input: myvector = {5, 4, 3, 2, 1};
+       myvector.push_back(0);
+Output: 5, 4, 3, 2, 1, 0
+Errors and Exceptions
+1. Strong exception guarantee – if an exception is thrown, there are no changes in the container. 
+2. If the value passed as argument is not supported by the vector, it shows undefined behavior.
+
+
+// CPP program to illustrate
+// push_back() function
+#include <iostream>
+#include <vector>
+using namespace std;
+  
+int main()
+{
+    vector<int> myvector{ 1, 2, 3, 4, 5 };
+    myvector.push_back(6);
+  
+    // Vector becomes 1, 2, 3, 4, 5, 6
+  
+    for (auto it = myvector.begin(); it != myvector.end(); ++it)
+        cout << ' ' << *it;
+}
+Output
+ 1 2 3 4 5 6
+
+vector::pop_back()()
+pop_back() function is used to pop or remove elements from a vector from the back. 
+The value is removed from the vector from the end, and the container size is decreased by 1. 
+
+Syntax :  
+vectorname.pop_back()
+Parameters :
+No parameters are passed
+Result :
+Removes the value present at the end or back 
+of the given vector named as vectorname
+
+Examples: 
+Input : myvector = {1, 2, 3, 4, 5};
+        myvector.pop_back();
+Output :1, 2, 3, 4
+Input : myvector = {5, 4, 3, 2, 1};
+        myvector.pop_back();
+Output :5, 4, 3, 2
+
+Errors and Exceptions
+1. No-Throw-Guarantee – If the container is not empty, the function never throws exceptions. 
+2. If the vector is empty, it shows undefined behavior.
+
+// CPP program to illustrate
+// pop_back() function
+#include <iostream>
+#include <vector>
+using namespace std;
+int main()
+{
+    vector<int> myvector{ 1, 2, 3, 4, 5 };
+    myvector.pop_back();
+  
+    // Vector becomes 1, 2, 3, 4
+  
+    for (auto it = myvector.begin(); it != myvector.end(); ++it)
+        cout << ' ' << *it;
+}
+Output
+ 1 2 3 4
+
+Does pop_back() removes values along with elements ?
+When pop_back() function is called, element at the last is removed, values and elements are one of the same thing in this case. 
+The destructor of the stored object is called, and length of the vector is removed by 1. 
+If the container’s capacity is not reduced, then you can still access the previous memory location but in this case, there is no use of accessing an already popped element, as it will result in an undefined behavior.
+
+Application:  push_back() and pop_back() 
+
+Given an empty vector, add integers to it using push_back function and then calculate its size. 
+
+Input  : 1, 2, 3, 4, 5, 6
+Output : 6
+Algorithm 
+
+1. Add elements to the vector using push_back function 
+2. Check if the size of the vector is 0, if not, increment the counter variable initialized as 0, and pop the back element. 
+3. Repeat this step until the size of the vector becomes 0. 
+4. Print the final value of the variable.  
+
+// CPP program to illustrate
+// Application of push_back and pop_back function
+#include <iostream>
+#include <vector>
+using namespace std;
+  
+int main()
+{
+    int count = 0;
+    vector<int> myvector;
+    myvector.push_back(1);
+    myvector.push_back(2);
+    myvector.push_back(3);
+    myvector.push_back(4);
+    myvector.push_back(5);
+    myvector.push_back(6);
+    while (!myvector.empty()) {
+        count++;
+        myvector.pop_back();
+    }
+    cout << count;
+    return 0;
+}
+Output
+6
+
+Let us see the differences in a tabular form as shown below as follows: 
+vector::push_back()                                                                 vector::pop_back()
+->It is used to add a new element at the end of the vector.                         ->It is used to remove a new element at the end of the vector.
+->Its syntax is -: push_back(value);                                                ->Its syntax is -: pop_back();
+->Its parameter is the value we want to add in the end of vector.	                  ->It does not take any parameters.
+->It does not have any return type.	                                                ->It does not have any return value.
+->Its complexity is constant.	                                                      ->Its complexity is constant.
+
+References:-
+https://leetcode.com/problems/move-zeroes/editorial/
+https://www.geeksforgeeks.org/vectorpush_back-vectorpop_back-c-stl/
