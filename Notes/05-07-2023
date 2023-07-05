@@ -1,0 +1,86 @@
+Difference Between Int Main And Void Main
+
+About int main():-
+? What is int return type and its significance?
+->The int main() defines the entry or the starting point of the C/C++ program code. 
+->Here int is a keyword that tells us about the integer data type. 
+->So when one runs the file on their local computer, the operating system executes the main () function. 
+->Any code that is written to solve a particular question goes into this main() function which the OS system when calls it, it runs the code.
+->Mainly we use this way of defining the function in the C/C++ program. 
+->The “int” in the int main() suggests that the “main()” function would return the integer type as an output to the operating system when the program is terminated. 
+->When the integer value is returned, it means that the program has been completed. 
+->If the return value is 0, it indicates that the program has terminated successfully, while any value other than 0 indicates an error.
+
+? What are argc and argv arguments?
+->Any primary function can be called using command line prompting. 
+->The main process takes two parameters, out of which one is the argc argument, which is an integer type, and the other is the argv parameter, which is a character type. 
+->The first parameter, argv, also called argument count, is an integer that tells us about the number of arguments that were entered in the command line before the program started. 
+->The second parameter, argv, also called the argument vector, is an array of pointers that point to the character's objects.
+
+Using int main() Function
+#include <stdio.h>
+int main() {
+    printf("Hello, World!\n");
+    return 0;  // indicates successful termination of the program 
+}
+Output:
+Hello, World!
+
+The above code in C language tells us about implementing the int main() function to print the “Hello World” string. 
+The return 0 statement indicates that the program has ended successfully in the main() function.
+
+About void main():-
+Significance of void return type
+->The void main() function returns no return value when the program is successfully terminated. 
+->There is an empty data type. It is used when one doesn’t want to return any value to the main function. 
+->In CPP, void main() is one of the ways to define the entry point but in a non-standard way.
+
+? Why is the void main() non-standard and not recommended?
+Most OS return a value to the user or the calling process to understand if the program was successful. This is useful in scripting, also. 
+To identify if the function was executed and if any error occurred. Thus, it is not used much, is non-standard, and specifically not recommended. 
+One more reason why it is not recommended to use is that it can cause compatibility issues with various other compilers. 
+Also, it is not recommended because it is not in the standard CPP language.
+
+Using void main() Function
+#include <stdio.h>  
+#include <conio.h>  
+void main()  
+{  
+printf (" Coding Ninjas");
+}
+Output-
+Coding Ninjas
+
+Differences between int main() and void main()
+
+Key points                                          int main()                                                   void main()
+->Return Type                                       int                                                          void
+->Return Value                                      It returns an int value                                      It does not return a value
+->Usage                                             Standard and portable                                        Non-standard and risky
+->Arguments                                         Can take argc and argv arguments                             Same as int main(), can also take void as an argument
+->Usage in code                                     Can be used to indicate errors                               Typically not used for errors
+->Convention                                        Standard convention in C and C++                             Non-standard and discouraged
+->Required by standard                              Required by C and C++ standards                              Not required by any standard
+->Potential issues                                  Omitting the return value can cause warnings                 Using void main() can cause compatibility issues and 
+                                                    or errors                                                    is not supported in some compilers
+->Compatibility                                     Compatible with most compilers                               Not supported in some compilers
+->Required by standard                              Required by C and C++ standards                              Not required by any standard
+
+Frequently Asked Questions
+? What is the difference between int main() and void main()?
+It is one of the ways to initialize the function where the return type is int when the program is successfully terminated. 
+If the return value is 0, then the program is successfully terminated, while other values indicate there was some error. 
+It is used with the main function, although it does not return any value to the OS when the program is terminated. 
+We use this when one doesn’t want any return values at the end of the program.
+
+? Which is better to use int main() or void main()?
+The int main() function is much better than the void main() function as it gives us a return value in the form of an integer which lets the user know if the program has run successfully or not. 
+At the same time, the void function does not return anything.
+
+? What is the return value for int main() and void main()?
+The return value in the int main() function is an integer datatype, while the return datatype in void main() is void. 
+The return values in both these types are different; thus, it is better to use int main() as it tells if the program is successful.
+
+References:-
+https://www.sanfoundry.com/c-program-sort-array-ascending-order/
+https://www.codingninjas.com/studio/library/difference-between-int-main-and-void-main
