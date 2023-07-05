@@ -81,6 +81,207 @@ At the same time, the void function does not return anything.
 The return value in the int main() function is an integer datatype, while the return datatype in void main() is void. 
 The return values in both these types are different; thus, it is better to use int main() as it tells if the program is successful.
 
+------***-------
+
+Multiset in C++ Standard Template Library (STL)-
+
+Multisets are a type of associative container similar to the set, with the exception that multiple elements can have the same values. 
+Some Basic Functions associated with multiset: 
+begin() – Returns an iterator to the first element in the multiset –>  O(1)
+end() – Returns an iterator to the theoretical element that follows the last element in the multiset –> O(1)
+size() – Returns the number of elements in the multiset –> O(1)
+max_size() – Returns the maximum number of elements that the multiset can hold –> O(1)
+empty() – Returns whether the multiset is empty –> O(1)
+insert (x) – Inserts the element x in the multiset –> O(log n)
+clear () – Removes all the elements from the multiset –> O(n)
+ erase(x) – Removes all the occurrences of x –> O(log n)
+
+Implementation: 
+// CPP Program to demonstrate the implementation of multiset
+#include <iostream>
+#include <iterator>
+#include <set>
+ 
+using namespace std;
+ 
+int main()
+{
+    // empty multiset container
+    multiset<int, greater<int> > gquiz1;
+ 
+    // insert elements in random order
+    gquiz1.insert(40);
+    gquiz1.insert(30);
+    gquiz1.insert(60);
+    gquiz1.insert(20);
+    gquiz1.insert(50);
+ 
+    // 50 will be added again to
+    // the multiset unlike set
+    gquiz1.insert(50);
+    gquiz1.insert(10);
+ 
+    // printing multiset gquiz1
+    multiset<int, greater<int> >::iterator itr;
+    cout << "\nThe multiset gquiz1 is : \n";
+    for (itr = gquiz1.begin(); itr != gquiz1.end(); ++itr) {
+        cout << *itr << " ";
+    }
+    cout << endl;
+ 
+    // assigning the elements from gquiz1 to gquiz2
+    multiset<int> gquiz2(gquiz1.begin(), gquiz1.end());
+ 
+    // print all elements of the multiset gquiz2
+    cout << "\nThe multiset gquiz2 \n"
+            "after assign from gquiz1 is : \n";
+    for (itr = gquiz2.begin(); itr != gquiz2.end(); ++itr) {
+        cout << *itr << " ";
+    }
+    cout << endl;
+ 
+    //Remove all elements up to element with value 30 in gquiz2
+    cout << "\ngquiz2 after removal \n"
+            "of elements less than 30 : \n";
+    gquiz2.erase(gquiz2.begin(), gquiz2.find(30));
+    for (itr = gquiz2.begin(); itr != gquiz2.end(); ++itr) {
+        cout << *itr << " ";
+    }
+ 
+    // remove all elements with value 50 in gquiz2
+    int num;
+    num = gquiz2.erase(50);
+    cout << "\ngquiz2.erase(50) : \n";
+    cout << num << " removed \n";
+    for (itr = gquiz2.begin(); itr != gquiz2.end(); ++itr) {
+        cout << *itr << " ";
+    }
+ 
+    cout << endl;
+ 
+    // lower bound and upper bound for multiset gquiz1
+    cout << "\ngquiz1.lower_bound(40) : \n"
+         << *gquiz1.lower_bound(40) << endl;
+    cout << "gquiz1.upper_bound(40) : \n"
+         << *gquiz1.upper_bound(40) << endl;
+ 
+    // lower bound and upper bound for multiset gquiz2
+    cout << "gquiz2.lower_bound(40) : \n"
+         << *gquiz2.lower_bound(40) << endl;
+    cout << "gquiz2.upper_bound(40) : \n"
+         << *gquiz2.upper_bound(40) << endl;
+ 
+    return 0;
+}
+Output
+The multiset gquiz1 is : 
+60 50 50 40 30 20 10 
+
+The multiset gquiz2 
+after assign from gquiz1 is : 
+10 20 30 40 50 50 60 
+
+gquiz2 after removal 
+of elements less than 30 : 
+30 40 50 50 60 
+gquiz2.erase(50) : 
+2 removed 
+30 40 60 
+
+gquiz1.lower_bound(40) : 
+40
+gquiz1.upper_bound(40) : 
+30
+gquiz2.lower_bound(40) : 
+40
+gquiz2.upper_bound(40) : 
+60
+
+Removing Element From Multiset Which Have Same Value:
+a.erase() – Remove all instances of element from multiset having the same value
+a.erase(a.find()) – Remove only one instance of element from multiset having same value
+The time complexities for doing various operations on Multisets are –
+Insertion of Elements- O(log N)
+Accessing Elements – O(log N)
+Deleting Elements- O(log N)
+
+// CPP Code to remove an element from multiset which have same value
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int main()
+{
+    multiset<int> a;
+    a.insert(10);
+    a.insert(10);
+    a.insert(10);
+ 
+    // it will give output 3
+    cout << a.count(10) << endl;
+ 
+    // removing single instance from multiset
+ 
+    // it will remove only one value of
+    // 10 from multiset
+    a.erase(a.find(10));
+ 
+    // it will give output 2
+    cout << a.count(10) << endl;
+ 
+    // removing all instance of element from multiset
+    // it will remove all instance of value 10
+    a.erase(10);
+ 
+    // it will give output 0 because all
+    // instance of value is removed from
+    // multiset
+    cout << a.count(10) << endl;
+ 
+    return 0;
+}
+Output
+3
+2
+0
+Time Complexity: O(max(Σ(log(i)),(K+log(n))), where i is the size of multiset at the time of insertion,  K is the total count of integers of the value passed, n is the size of multiset.
+Auxiliary Space: O(1).
+
+List of Functions of Multiset:-
+
+Functions                      Definition
+begin()                        Returns an iterator to the first element in the multiset.
+end()                          Returns an iterator to the theoretical element that follows the last element in the multiset.
+size()                         Returns the number of elements in the multiset.
+max_size()                     Returns the maximum number of elements that the multiset can hold.
+empty()                        Returns whether the multiset is empty.
+pair insert(const g)           Adds a new element ‘g’ to the multiset.
+iterator insert                Adds a new element ‘g’ at the position pointed by the iterator.
+(iterator position,const g)
+erase(iterator position)       Removes the element at the position pointed by the iterator.
+erase(const g)                 Removes the value ‘g’ from the multiset.
+clear()	                       Removes all the elements from the multiset.
+key_comp() / value_comp()	   Returns the object that determines how the elements in the multiset are ordered (‘<‘ by default).
+find(const g)	               Returns an iterator to the element ‘g’ in the multiset if found, else returns the iterator to end.
+count(const g)	               Returns the number of matches to element ‘g’ in the multiset.
+lower_bound(const g)	       Returns an iterator to the first element that is equivalent to ‘g’ or definitely will not go before the element ‘g’ in the multiset if found, else returns the iterator to end.
+upper_bound(const g)	       Returns an iterator to the first element that will go after the element ‘g’ in the multiset.
+multiset::swap()	           This function is used to exchange the contents of two multisets but the sets must be of the same type, although sizes may differ.
+multiset::operator=	           This operator is used to assign new contents to the container by replacing the existing contents.
+multiset::emplace()	           This function is used to insert a new element into the multiset container.
+multiset equal_range()	       Returns an iterator of pairs. The pair refers to the range that includes all the elements in the container which have a key equivalent to k.
+multiset::emplace_hint()	   Inserts a new element in the multiset.
+multiset::begin()	           Returns a reverse iterator pointing to the last element in the multiset container.
+multiset::rend()	           Returns a reverse iterator pointing to the theoretical element right before the first element in the multiset container.
+multiset::cbegin()	           Returns a constant iterator pointing to the first element in the container.
+multiset::cend()	           Returns a constant iterator pointing to the position past the last element in the container.
+multiset::crbegin()	           Returns a constant reverse iterator pointing to the last element in the container.
+multiset::crend()	           Returns a constant reverse iterator pointing to the position just before the first element in the container.
+multiset::get_allocator()	   Returns a copy of the allocator object associated with the multiset.
+
 References:-
 https://www.sanfoundry.com/c-program-sort-array-ascending-order/
 https://www.codingninjas.com/studio/library/difference-between-int-main-and-void-main
+------***-------
+https://www.codingninjas.com/studio/problem-of-the-day/moderate
+https://takeuforward.org/data-structure/vertical-order-traversal-of-binary-tree/
+https://www.geeksforgeeks.org/multiset-in-cpp-stl/
