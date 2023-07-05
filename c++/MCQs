@@ -1,0 +1,39 @@
+MCQs
+
+? which of the header files is used to implement algorithms provided by C++ STL?
+a) <algorithm>
+b) <iterators>
+c) <map>
+d) <Algorithm>
+Ans:- (a)
+
+? An aeroplane covers a certain distance at a speed of 240kmph in 5 hours. To cover the same distance in 1 and 2/3 hours, it must travel at a speed of?
+a) 720km/min
+b) 700m/hr
+c) 720km/hr
+d) 700km/hr
+Ans:- (c)
+
+? what is the output of the following code?
+
+public class Solution
+{
+   public int getSum(int a,int b)
+   {
+        int sum = a+b;
+        return sum;
+   }
+   public static void main(String args[])
+   {
+        Solution obj=new Solution();
+        System.out.println(obj.getSum());
+   }
+}
+
+
+a) 30
+b) 0
+c) compilation error
+d) none of the above
+Ans:- (c)
+## In the above program, we have defined a method that takes 2 parameters and returns a value. But when we call this method, we have not passed any argument.Therefore,we got an error
