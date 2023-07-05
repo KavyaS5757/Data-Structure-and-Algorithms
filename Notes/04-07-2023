@@ -15,7 +15,6 @@ Adds the value mentioned as the parameter
 to the back of the vector named as vectorname
 Examples:  
 
-
 Input: myvector = {1, 2, 3, 4, 5};
        myvector.push_back(6);
 Output:1, 2, 3, 4, 5, 6
