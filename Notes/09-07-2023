@@ -9,4 +9,22 @@ Here's how it works:
 ->The sort() function rearranges the elements in the specified range in ascending order using a sorting algorithm (usually an implementation of Quicksort, Mergesort, or Heapsort).
 ->After the sort() function call, the elements in the array arr will be sorted in ascending order, with the smallest element at index 0 and the largest element at index size-1.
 ->Note that the sort() function modifies the original array. 
-->Suppose you want to preserve the original order of elements. In that case, you can make a copy of the array before sorting or use a different approach that doesn't modify the original array.
+->Suppose you want to preserve the original order of elements. 
+->In that case, you can make a copy of the array before sorting or use a different approach that doesn't modify the original array.
+
+#fixed and setprecision()
+ The fixed and setprecision() manipulators are part of the <iomanip> header in C++, and they are used to format the output of floating-point numbers.
+Here's an example:
+
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+int main() {
+    double number = 3.14159;
+    cout << fixed << setprecision(2) << number << endl;
+    return 0;
+}
+In the example above, fixed sets the floating-point output format to fixed-point notation, which means a fixed number of digits after the decimal point.
+setprecision(2) sets the precision to two decimal places. Together, they ensure that the output of the number variable is displayed with two decimal places.
