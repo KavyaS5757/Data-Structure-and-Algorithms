@@ -1,0 +1,12 @@
+#The code sort(arr, arr+size); is used to sort an array of arr of a given size in ascending order.
+Here's how it works:
+
+->The sort() function is part of the C++ Standard Library and is defined in the <algorithm> header.
+->It takes two iterators as arguments that specify the range of elements to be sorted. 
+->In this case, arr represents the starting iterator, and arr + size represents the ending iterator.
+->The range [arr, arr+size) includes the elements from index 0 to size-1 of the array arr. 
+->The element at index arr+size is not included in the range.
+->The sort() function rearranges the elements in the specified range in ascending order using a sorting algorithm (usually an implementation of Quicksort, Mergesort, or Heapsort).
+->After the sort() function call, the elements in the array arr will be sorted in ascending order, with the smallest element at index 0 and the largest element at index size-1.
+->Note that the sort() function modifies the original array. 
+->Suppose you want to preserve the original order of elements. In that case, you can make a copy of the array before sorting or use a different approach that doesn't modify the original array.
