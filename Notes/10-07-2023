@@ -201,3 +201,66 @@ Output:
 Your id : 7
 Hello,  welcome to GfG !
 Hello, MOHIT KUMAR welcome to GfG !
+
+--------***------------
+
+#cin get() in C++ with Examples
+
+cin.get() is used for accessing the character array. 
+It includes white-space characters. Generally, cin with an extraction operator (>>) terminates when a whitespace is found. 
+However, cin.get() reads a string with the whitespace.
+
+Syntax:
+cin.get(string_name, size);
+
+Example 1:
+
+// C++ program to demonstrate cin.get()
+  
+#include <iostream>
+using namespace std;
+  
+int main()
+{
+    char name[25];
+    cin.get(name, 25);
+    cout << name;
+  
+    return 0;
+}
+Input:
+
+Geeks for Geeks
+Output:
+Geeks for Geeks
+
+Example 2:
+
+// C++ program to demonstrate cin.get()
+  
+#include <iostream>
+using namespace std;
+  
+int main()
+{
+    char name[100];
+    cin.get(name, 3);
+    cout << name;
+  
+    return 0;
+}
+Input:
+
+GFG
+Output:
+GF
+
+/*
+References:-
+
+https://dev.to/aayushidroid/day-1-data-types-30-days-of-code-5d62
+https://www.geeksforgeeks.org/getline-string-c/
+---------***-----------
+https://www.geeksforgeeks.org/cin-get-in-c-with-examples/
+
+*/
