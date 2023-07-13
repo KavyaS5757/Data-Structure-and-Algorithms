@@ -3,7 +3,7 @@ The C typedef keyword is used to redefine the name of already existing data type
 
 When names of datatypes become difficult to use in programs, typedef is used with user-defined datatypes, which behave similarly to defining an alias for commands.
 
-C typedef Syntax
+C typedef Syntax 
 "typedef existing_name alias_name;"
 After this declaration, we can use the alias_name as if it were the real existing_name in out C program.
 
