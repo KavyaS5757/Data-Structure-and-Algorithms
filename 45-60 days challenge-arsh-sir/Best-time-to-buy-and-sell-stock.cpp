@@ -3,7 +3,7 @@
 */
 
 class Solution {
-public:
+public: 
     int maxProfit(vector<int>& prices) {
         
         int op=0;  //overall profit
