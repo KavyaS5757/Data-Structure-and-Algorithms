@@ -148,3 +148,26 @@ d) 5110
 Ans:- (b)
 when modify() is called it sets parent class 'a' variable=10. 
 When print() is called, then 'a' from class B is printed, and when getA() is called, then 'a' from class A is printed
+
+
+?when is the constructor of a class or structure called in C++?
+a) An object out of scope
+b) a class is declared
+c) an object is created
+d) an object is used
+
+
+what will be the output of the following?
+
+try:
+  a=10;
+  b=0;
+  c=a/b;
+  print(c)
+except ZeroDivisonError:
+  print("Exception Occured")
+
+a) exception occurred
+b) value error
+c) ZerDivisonError
+d)None of the above
