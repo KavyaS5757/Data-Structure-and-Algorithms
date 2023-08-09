@@ -171,3 +171,7 @@ a) exception occurred
 b) value error
 c) ZerDivisonError
 d)None of the above
+
+? in the jagged list all the rows have same number of columns?
+a) True
+b) False
