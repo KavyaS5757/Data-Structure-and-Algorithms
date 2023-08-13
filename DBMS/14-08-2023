@@ -1,0 +1,18 @@
+> Data were stored in the form of bits or bytes form and data is nothing but collection of raw bytes
+  Image is a collection of bytes
+  Integers ""       ""
+
+  Data -> Interpret/Processing -> get the meaning of it -> Information will be extracted
+  eg: If we are getting different count of likes in different social medias, we can infer that in which we have to concentrate and which social media for us is more effecting, 
+  which in another way guide us to take a decision
+
+> DBMS have 2 parts
+  (i) Database -> store
+  (ii) Set of programs (accessing, adding, updating, deleting
+
+  DBMS vs file-processing 
+  disadvantages:-
+  -> data redundancy and inconsistency
+     data redundancy:- it's nothing but storing the same data in different places
+     inconsistency:- same person added different datas to different places
+  -> difficulty in accessing data
