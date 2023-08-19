@@ -1,0 +1,27 @@
+Database
+Database is collection of data in a format that can be easily accessed (Digital)
+A software application used to manage our DB is called DBMS (Database Management System)
+
+Types of Databases
+Relational-RDBMS                                          Non-relational (NoSQL)  --sql can't understand
+Data stored in tables                                     data not stored in tables
+We use SQL to work with relational DBMS
+
+What is SQL?
+SQL is a programming language used to interact with relational databases.
+Structured Query Language
+It is used to perform CRUD operations :
+Create
+Read
+Update
+Delete
+
+can be divided into 4 parts:
+> Data Definition Language(DDL)
+  Deals with database schemas and descriptions, of how the data should reside in the database
+> Data Control Language(DCL)
+  It includes commands such as GRANT and mostly concerned with rights, permissions and other controls of the database system
+> Data Manipulation Language(DML)
+  Deals with data manipulation and includes most common SQL statements
+> Transaction Control Language(TCL)
+  It deals with a transaction within a database
