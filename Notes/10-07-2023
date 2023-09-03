@@ -8,7 +8,8 @@ The getline() function can be represented in two ways:
 Syntax:
 istream& getline(istream& is, 
            string& str, char delim);
-           
+
+
 2. Parameters: 
 
 ->is: It is an object of istream class and tells the function about the stream from where to read the input from.
