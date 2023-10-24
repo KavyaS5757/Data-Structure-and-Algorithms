@@ -12,4 +12,5 @@ string toLowerCase(string s) {
 
 /*
 https://leetcode.com/problems/to-lower-case/
+https://practice.geeksforgeeks.org/problems/java-convert-string-to-lowercase2313/1
 */
