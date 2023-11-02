@@ -12,4 +12,5 @@ void reverseString(vector<char>&s)
 
 /*
 https://leetcode.com/problems/reverse-string/
+https://practice.geeksforgeeks.org/problems/reverse-a-string/1
 */
