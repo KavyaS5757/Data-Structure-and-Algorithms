@@ -1,0 +1,19 @@
+->Data analyst:- someone who collects, transforms and organizes data in order to help make informed decisions
+->Data:- a collection of facts
+->Data Analysis:- collection, transformation and organization of data in order to draw conclusions, make predictions, and drive informed decision-making
+->People analytics is the practice of collecting and analyzing data on the people who make up a company’s workforce in order to gain insights to improve how the company operates.
+
+-> The process presented as part of the Google Data Analytics Certificate is one that will be valuable to you as you keep moving forward in your career:
+
+Ask: business challenge, objective, or question
+
+Prepare: data generation, collection, storage, and data management
+
+Process: data cleaning and data integrity
+
+Analyze: data exploration, visualization, and analysis
+
+Share: communicating and interpreting results 
+
+Act:  putting  insights to work to solve the problem
+
