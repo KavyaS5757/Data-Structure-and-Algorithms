@@ -1,0 +1,43 @@
+Q1. What will be the output of the following code?
+
+for i in range(1,5):
+    break
+    print(i,end = " ")
+
+a)Syntax Error x
+b)Runtime Error x
+c)No Output 
+d)None of the Above x
+Solution description
+After entering into the loop we are performing a break immediately so control will come out of the loop and nothing will be printed.
+
+Q2. Which of the following commands will create a list?
+
+a)list1 = list() x
+b)list1 = [] x
+c)list1 = list([1, 2, 3]) x
+d)all of the mentioned
+Solution description
+Execute in the shell to verify
+
+Q3. What will be the output of the following code?
+if 10 == 10:
+    print("Welcome to CodingNinjas")
+    
+a)None x
+b)Welcome to CodingNinjas 
+Solution description
+The code block in an if statement is executed if the boolean condition associated with the if statement evaluates to True. In this example, the boolean condition (10 == 10) evaluates to True and the code block is executed.
+
+Q4. What will be the output of the following code?
+
+import collections
+temp = dict()
+temp = collections.defaultdict(list) 
+print(temp[1])
+
+
+a)1 x
+b)[] 
+c)An exception is thrown x
+d)" " x
